@@ -1,0 +1,42 @@
+﻿@model Employee
+
+<h1>Create</h1>
+
+<form method="post" asp-action="Create">
+    <table class="table table-bordered">
+       
+        <tr>
+            <td><label asp-for="Name"></label> </td>
+            <td><input asp-for="Name" class="form-control" /><td>
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+        </tr>
+        <tr>
+            <td><label asp-for="HDate"></label> </td>
+            <td><input asp-for="HDate" class="form-control" /></td>
+            <span asp-validation-for="HDate" class="text-danger"></span>
+        </tr>
+        <tr>
+            <td><label asp-for="Email"></label> </td>
+            <td><input asp-for="Email" class="form-control" /></td>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </tr>
+        <tr>
+            <td><label asp-for="Salary"></label> </td>
+            <td><input asp-for="Salary" class="form-control" /></td>
+            <span asp-validation-for="Salary" class="text-danger"></span>
+        </tr>
+        <tr>
+            <td><label asp-for="City"></label> </td>
+            <td><input asp-for="City" class="form-control" /></td>
+            <span asp-validation-for="City" class="text-danger"></span>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:right">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-warning">Canecel</a>
+            </td>
+
+        </tr>
+    </table>
+</form>
