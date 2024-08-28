@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Managment.Models
 {
@@ -19,6 +20,12 @@ namespace Managment.Models
 
         public decimal Salary { get; set; }
 
+        
         public string City { get; set; }
+
+        [ForeignKey("Department")]
+        public int DepartmentId { get; set; }
+
+        public Department Department { get; set; }
     }
 }

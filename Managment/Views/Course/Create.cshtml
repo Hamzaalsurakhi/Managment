@@ -1,0 +1,39 @@
+﻿@model Course
+
+<h1>Create</h1>
+
+<form method="post" asp-action="Create">
+    <table class="table table-bordered">
+
+        <tr>
+            <td><label asp-for="CourseName"></label> </td>
+            <td><input asp-for="CourseName" class="form-control" />
+            <td>
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+
+        </tr>
+        <tr>
+            <td><label asp-for="Period"></label> </td>
+            <td><input asp-for="Period" class="form-control" /></td>
+            <span asp-validation-for="Period" class="text-danger"></span>
+        </tr>
+        <tr>
+            <td><label asp-for="SDate"></label> </td>
+            <td><input type="date" asp-for="SDate" class="form-control" /></td>
+            <span asp-validation-for="SDate" class="text-danger"></span>
+        </tr>
+        <tr>
+            <td><label asp-for="Hours"></label> </td>
+            <td><input asp-for="Hours" class="form-control" /></td>
+            <span asp-validation-for="Hours" class="text-danger"></span>
+        </tr>
+        
+        <tr>
+            <td colspan="2" style="text-align:right">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-warning">Canecel</a>
+            </td>
+
+        </tr>
+    </table>
+</form>

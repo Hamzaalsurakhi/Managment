@@ -1,6 +1,8 @@
 ﻿using Managment.Data;
 using Managment.Models;
+using Managment.Models.DataModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Managment.Controllers
 {
@@ -14,7 +16,13 @@ namespace Managment.Controllers
         }
         public IActionResult Index()
         {
-            return View(_appDbContext.Employees);
+            EmpCourseDataModel model = new EmpCourseDataModel
+            {
+                Employees=_appDbContext.Employees.Include(d =>d.Department).ToList(),
+                Courses=_appDbContext.Courses.ToList(),
+            };
+            ViewBag.stu=_appDbContext.Students;
+            return View(model);
         }
 
         public IActionResult Details(int? id)
